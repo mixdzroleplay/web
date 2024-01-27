@@ -1,0 +1,189 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+/*-------------------*/
+body {
+  background-image: url(./Resoures/bg.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+}
+/*----------Nav Bar---------*/
+nav {
+  background-color: #645f3a71;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  transition: top 0.3s;
+  position: fixed;
+  width: 100%;
+  top: 0;
+}
+
+.logo {
+  display: flex;
+}
+
+.logo a {
+  font-size: 1.3em;
+  color: rgb(248, 248, 248);
+  text-decoration: none;
+  padding: 9px;
+  margin: 0px;
+  border-radius: 5px;
+}
+
+.logo a:hover {
+  color: #fddd68;
+}
+
+.logo_imag {
+  height: 40px;
+  border-radius: 15px;
+}
+
+.nav-list {
+  list-style: none;
+  display: none; 
+}
+
+.nav-item {
+  font-size: 1.3em;
+  color: rgb(248, 248, 248);
+  text-decoration: none;
+  margin: 15px;
+}
+.nav-item a {
+  text-decoration: none;
+  color: white;
+  font-size: 1.05em;
+}
+
+.nav-item a:hover {
+  color: #fddd68;
+}
+/*-----------Stitting Nav --------*/ 
+
+@media only screen and (max-width: 600px) {
+
+.nav-list {
+  flex-direction: column;
+  align-items: center;
+}
+
+.nav-item {
+  display: inline;
+  list-style: decimal;
+  margin: 4px;
+  padding: 9px 50px;
+  font-size: 0.9em;
+  list-style: inside;
+}
+
+
+.menu-icon {
+  display: block;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 1.5em;
+  cursor: pointer;
+  color: white;
+}
+footer{
+  top: 146vh;
+}
+}
+/*------*/
+@media only screen and (min-width: 601px) {
+  .menu-icon {
+    display: none;
+  }
+
+  .nav-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+/*-----------Home-----------*/
+.rules {
+  margin-top: 8%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column; /* تحديد اتجاه العناصر إلى عمود واحد */
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+.rp-rules {
+  width: 40%;
+  max-width: 750px;
+  padding: 10px;
+  margin: 5px;
+  background-color: #645f3a8e;
+  color: #fdfcf8;
+  text-align: start;
+  font-size: 1em;
+  border-radius: 15px;
+  cursor: pointer;
+  box-shadow: 0px 0px  9px 4px black;
+  transition: transform 0.7s;
+
+}
+.rp-rules:hover{
+  transform: scale(1.05);
+  background-color: black;
+  margin: 10px;
+  padding: 10px;
+}
+.rp-rules p{
+  margin: 5px;
+
+}
+
+.tit{
+  color: #fddd68;
+}
+/*----------*/
+footer{
+  font-size: 0.9em;
+  background-color: #645f3a71;
+  color: #fdfcf8;
+  text-align: center;
+  padding: 5px;
+  bottom: 0;
+  width: 100%
+}
+/*-------Scrol-------*/
+/* شكل شريط التمرير */
+::-webkit-scrollbar {
+  width: 12px; /* عرض شريط التمرير */
+}
+
+/* شكل المقدمة والتلميح في شريط التمرير */
+::-webkit-scrollbar-track {
+  background-color: #fddd6871 ; /* لون الخلفية للمقدمة والتلميح */
+}
+
+/* شكل العروة (الشريط نفسه) في شريط التمرير */
+::-webkit-scrollbar-thumb {
+  background-color: #6d6444fb; /* لون العروة */
+  border-radius: 2px; /* شكل حواف العروة */
+}
+
+/* شكل العروة عند التحريك */
+::-webkit-scrollbar-thumb:hover {
+  background-color:  #645f3a; /* لون العروة عند التحريك عليها */
+}
+/*---------*/

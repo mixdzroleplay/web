@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="./Resoures/icon.png">
+  <title>MixDz Roleplay</title>
+</head>
+<body>
+
+  <nav>
+    <div class="logo">
+    <img class="logo_imag" src="./Resoures/logo.png" alt="" >
+    <a href="./index.html">MixDz Roleplay</a>
+    </div>
+
+    <div class="menu-icon" onclick="toggleMenu()">☰</div>
+  <ul class="nav-list">
+    <li class="nav-item"><a href="./index.html">Home</a></li>
+    <li class="nav-item"><a href="./Rules.html">Rules Guide</a></li>
+    <li class="nav-item"><a href="./contact_us.html">Contact us</a></li>
+  </ul>
+  </nav>
+
+  <script>
+    function toggleMenu() {
+      var navList = document.querySelector('.nav-list');
+      navList.style.display = (navList.style.display === 'none' || navList.style.display === '') ? 'flex' : 'none';
+    }
+  </script>
+
+
+
+  <section class="home" id="home">
+  <div class="welcome" >
+   <h1 class="name" >MixDz Roleplay</h1>
+   <p class="info" >The Algerian server for the MTA game provides an exciting online role-playing environment. It is distinguished by its meticulous design and diverse experience, allowing players to embody their characters in various virtual worlds. The server offers a friendly and intimate community for Algerian players, encouraging interaction and collaboration. This server is considered an ideal place for role-playing game enthusiasts looking for a unique and enjoyable experience in a sophisticated virtual world.
+   </p>
+  </div>
+  <div class="butens" >
+    <a href="https://discord.gg/8ffgTuRQXn" target="_blank" >Join Discord</a>
+    <a href="./Rules.html">Read Rules</a>
+    <a href="mtasa://45.146.253.59:22254" target="_blank">Join Game</a>
+  </div>
+  <footer>Copyright © 2024 MixDz Roleplay. All rights reserved.</footer>
+  </section>
+
+
+<script>
+  const nameElement = document.querySelector('.name');
+  const originalText = nameElement.innerText;
+  let currentIndex = originalText.length - 1;
+  let isDeleting = true;
+
+  setInterval(() => {
+    let newText;
+
+    if (isDeleting) {
+      newText = originalText.substring(0, currentIndex);
+      currentIndex--;
+    } else {
+      newText = originalText.substring(0, currentIndex + 1);
+      currentIndex++;
+    }
+
+    nameElement.innerText = newText;
+
+    if (currentIndex < 0) {
+      isDeleting = false;
+    }
+
+    if (currentIndex > originalText.length) {
+      isDeleting = true;
+    }
+  }, 200);
+</script>
+
+</body>
+</html>

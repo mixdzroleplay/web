@@ -1,0 +1,112 @@
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="contact.css">
+  <link rel="icon" href="./Resoures/icon.png">
+  <title>MixDz Roleplay</title>
+
+</head>
+<body>
+  <nav>
+    <div class="logo">
+    <img class="logo_imag" src="./Resoures/logo.png" alt="" >
+    <a href="./index.html">MixDz Roleplay</a>
+    </div>
+
+    <div class="menu-icon" onclick="toggleMenu()">☰</div>
+  <ul class="nav-list">
+    <li class="nav-item"><a href="./index.html">Home</a></li>
+    <li class="nav-item"><a href="./Rules.html">Rules Guide</a></li>
+    <li class="nav-item"><a href="./contact_us.html">Contact us</a></li>
+  </ul>
+  </nav>
+
+  <script>
+    function toggleMenu() {
+      var navList = document.querySelector('.nav-list');
+      navList.style.display = (navList.style.display === 'none' || navList.style.display === '') ? 'flex' : 'none';
+    }
+  </script>
+
+ 
+
+  <section>
+    <form action="#" method="post" onsubmit="submitForm(); return false;"> 
+  <header>
+    <h1 class="name" >Contact Managmenet Team</h1>
+  </header>
+      <label for="name">Full Name:</label>
+      <input type="text" id="name" name="name" required>
+      <label for="discord">Discord Uesrname:</label>
+      <input type="text" id="discord" name="discord" required>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="message">Message:</label>
+      <textarea class="s" id="message" name="message" rows="4" required></textarea>
+
+      <button type="submit">Click To Sent</button>
+    </form>
+    
+  </section>
+<footer>Copyright © 2024 MixDz Roleplay. All rights reserved.</footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <script>
+    emailjs.init("9bbF3lza_dd7BvSNJ");
+
+    function submitForm() {
+      var formData = {
+        name: document.getElementById('name').value,
+        discord: document.getElementById('discord').value,
+        email: document.getElementById('email').value,
+        message: document.getElementById('message').value
+        
+      };
+
+      emailjs.send("service_l1oti8i", "template_01mika3", formData)
+        .then(function(response) {
+          console.log("Email sent successfully", response);
+          alert("Message sent successfully!");
+        }, function(error) {
+          console.error("Failed to send email", error);
+          alert("Failed to send message. Please try again.");
+        });
+    }
+  </script>
+
+  <script>
+    const nameElement = document.querySelector('.name');
+    const originalText = nameElement.innerText;
+    let currentIndex = originalText.length - 1;
+    let isDeleting = true;
+  
+    setInterval(() => {
+      let newText;
+  
+      if (isDeleting) {
+        newText = originalText.substring(0, currentIndex);
+        currentIndex--;
+      } else {
+        newText = originalText.substring(0, currentIndex + 1);
+        currentIndex++;
+      }
+  
+      nameElement.innerText = newText;
+  
+      if (currentIndex < 0) {
+        isDeleting = false;
+      }
+  
+      if (currentIndex > originalText.length) {
+        isDeleting = true;
+      }
+    }, 200);
+  </script>
+
+</body>
+</html>
+

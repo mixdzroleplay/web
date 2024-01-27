@@ -1,0 +1,253 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+/*---------*/
+body {
+  background-image: url(./Resoures/bg.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+}
+/*-------------------*/
+nav {
+  background-color: #645f3a71;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  transition: top 0.3s;
+  position: fixed;
+  width: 100%;
+  top: 0;
+
+}
+
+.logo {
+  display: flex;
+}
+
+.logo a {
+  font-size: 1.3em;
+  color: rgb(248, 248, 248);
+  text-decoration: none;
+  padding: 9px;
+  margin: 0px;
+  border-radius: 5px;
+}
+
+.logo a:hover {
+  color: #fddd68;
+}
+
+.logo_imag {
+  height: 40px;
+  border-radius: 15px;
+}
+
+.nav-list {
+  list-style: none;
+  display: none; /* تبدأ بالتخفي */
+}
+
+.nav-item {
+  font-size: 1.3em;
+  color: rgb(248, 248, 248);
+  text-decoration: none;
+  margin: 15px;
+}
+.nav-item a {
+  text-decoration: none;
+  color: white;
+  font-size: 1.05em;
+}
+
+.nav-item a:hover {
+  color: #fddd68;
+}
+/*-----------------*/
+.home {
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+
+.welcome {
+  color: #fdfcf8;
+  background-color: #645f3a8e;
+  border-radius: 15px;
+  text-align: center;
+  font-size: 1em;
+  width: 80%; /* تحديد عرض بنسبة */
+  max-width: 650px; /* تحديد عرض أقصى */
+  height: 250px;
+  padding: 10px;
+  box-shadow: 0px 0px  10px 5px black;
+}
+
+.name {
+  display: inline;
+  margin: 1px;
+  padding: 1px;
+  font-size: 2.5em;
+}
+
+.info {
+  margin-top: 20px;
+  text-align: center;
+}
+.info:hover{
+  color: #fddd68;
+  font-size: 1.1em;
+  text-shadow: 2px 1px 2px  black;
+}
+
+.butens {
+  font-size: 1em;
+  justify-content: space-between;
+  display: flex; /* تحديد العرض كـ flex */
+  flex-wrap: wrap; /* تحديد عدة صفوف */
+  position: absolute;
+  top: 70%;
+  padding: 0 10px; /* إضافة هامش للحواف للحفاظ على التباعد */
+  box-sizing: border-box; /* تأكيد عدم احتساب الهوامش ضمن العرض */
+}
+
+.butens a {
+  background-color: #645f3a8e;
+  padding: 15px 60px;
+  border-radius: 10px;
+  margin: 10px; /* تحديد هامش بين الأزرار */
+  text-decoration: none;
+  color: #ffffff;
+  transition: transform 0.5s;
+  box-shadow: 0px 0px  10px 5px black;
+
+}
+.butens a:hover{
+  transform: scale(1.1);
+}
+
+.link-icon {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  position: fixed;
+  height: 50px;
+  margin-left: 350px;
+  bottom: 120px;
+}
+
+.butens a:hover {
+  color: #fddd68;
+}
+
+/* تحسين الصفحة للشاشات الصغيرة (موبايل) */
+@media only screen and (max-width: 600px) {
+  .butens a {
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    display: flex; /* جعل الأزرار تأخذ عرض الشاشة بالكامل */
+  }
+  .welcome{
+    height: 350px;
+   padding: 10px;
+  }
+  .butens{
+    top: 105%;
+  }
+  .home{
+    height: 150vh;
+  }
+
+
+/*--------*/
+
+.nav-list {
+  
+  flex-direction: column;
+  align-items: center;
+  
+
+}
+
+.nav-item {
+  display: inline;
+  list-style: decimal;
+  margin: 4px;
+  padding: 9px 50px;
+  font-size: 0.9em;
+  list-style: inside;
+}
+
+
+.menu-icon {
+  display: block;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 1.5em;
+  cursor: pointer;
+  color: white;
+}
+footer{
+  top: 146vh;
+}
+
+
+}
+/*---------*/
+@media only screen and (min-width: 601px) {
+  .menu-icon {
+    display: none;
+  }
+
+  .nav-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+
+/*-------Footer--------*/
+footer{
+  font-size: 0.9em;
+    justify-content: center;
+    display: flex;
+    color: white;
+    position: absolute;
+    bottom: 0;
+}
+/*-------Scrol-------*/
+/* شكل شريط التمرير */
+::-webkit-scrollbar {
+  width: 12px; /* عرض شريط التمرير */
+}
+
+/* شكل المقدمة والتلميح في شريط التمرير */
+::-webkit-scrollbar-track {
+  background-color: #645f3a8e ; /* لون الخلفية للمقدمة والتلميح */
+}
+
+/* شكل العروة (الشريط نفسه) في شريط التمرير */
+::-webkit-scrollbar-thumb {
+  background-color: #555; /* لون العروة */
+  border-radius: 2px; /* شكل حواف العروة */
+}
+
+/* شكل العروة عند التحريك */
+::-webkit-scrollbar-thumb:hover {
+  background-color: #555; /* لون العروة عند التحريك عليها */
+}
+/*-------*/
